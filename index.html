@@ -85,31 +85,6 @@
       transform: translateY(-2px);
     }
 
-    /* Noticias */
-    section {
-      margin: 30px auto;
-      max-width: 800px;
-    }
-
-    section h2 {
-      color: #0056a2;
-      margin-bottom: 15px;
-    }
-
-    section ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    section ul li {
-      background: #eef6ff;
-      margin: 10px 0;
-      padding: 10px 15px;
-      border-radius: 5px;
-      text-align: left;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
     /* Formulario de contacto */
     form {
       margin: 20px auto;
@@ -200,14 +175,6 @@
       <a href="MOE_Ed53_Rev04_signed.pdf" target="_blank" download>MOE</a>
     </div>
 
-    <!-- Noticias dinámicas -->
-    <section id="noticias">
-      <h2>Últimas Noticias</h2>
-      <ul>
-        <li>Cargando noticias...</li>
-      </ul>
-    </section>
-
     <!-- Formulario de contacto -->
     <section>
       <h2>Formulario de Contacto</h2>
@@ -239,14 +206,6 @@
     // Mapa interactivo con LeafletJS
     const map = L.map('map').setView([40.4168, -3.7038], 10);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-
-    // Noticias dinámicas simuladas
-    const noticias = [
-      { title: 'Actualización del MOE', content: 'Nueva versión disponible.' },
-      { title: 'Reunión programada', content: 'Reunión del equipo MAD el 15 de febrero.' },
-    ];
-    const ul = document.querySelector('#noticias ul');
-    ul.innerHTML = noticias.map(n => `<li><h3>${n.title}</h3><p>${n.content}</p></li>`).join('');
   </script>
 </body>
 </html>
