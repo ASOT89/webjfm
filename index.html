@@ -52,6 +52,21 @@
       transform: scale(1.05);
     }
 
+    /* Widget del mapa */
+    .map-widget {
+      margin: 40px auto;
+      max-width: 90%;
+      border: 3px solid rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+    }
+
     /* Pie de página */
     footer {
       margin-top: 40px;
@@ -73,6 +88,16 @@
       <a href="#" target="_blank">Botón 4</a>
       <a href="#" target="_blank">Botón 5</a>
     </div>
+    <section>
+      <h2>Mapa de vuelos en tiempo real</h2>
+      <div class="map-widget">
+        <iframe 
+          src="https://es.airnavradar.com/data/airlines/UX" 
+          title="Mapa de vuelos Air Europa"
+          loading="lazy">
+        </iframe>
+      </div>
+    </section>
   </main>
   <footer>
     <p>© 2025 AEA Stores MAD. Todos los derechos reservados.</p>
