@@ -91,31 +91,40 @@
       transform: translateY(-2px);
     }
 
-    /* Sección Contáctanos */
-    .contact-section {
-      background: #eef6ff;
-      padding: 20px;
-      border-top: 2px solid #0056a2;
-      border-bottom: 2px solid #0056a2;
-      margin-top: 30px;
+    /* Sección de Noticias */
+    section {
+      margin: 30px auto;
+      max-width: 800px;
     }
 
-    .contact-section h2 {
+    section h2 {
       color: #0056a2;
       margin-bottom: 15px;
     }
 
-    .contact-section p {
-      margin: 5px 0;
+    section ul {
+      list-style: none;
+      padding: 0;
     }
 
-    .contact-section a {
-      color: #0056a2;
-      text-decoration: none;
+    section ul li {
+      background: #eef6ff;
+      margin: 10px 0;
+      padding: 10px 15px;
+      border-radius: 5px;
+      text-align: left;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
-    .contact-section a:hover {
-      text-decoration: underline;
+    /* Búsqueda */
+    #search-bar {
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin: 20px 0;
+      width: 80%;
+      max-width: 500px;
     }
 
     /* Pie de página */
@@ -158,6 +167,9 @@
   <main>
     <p class="main-text">Bienvenido a la página oficial de documentos para AEA Stores MAD. Accede rápidamente a las herramientas y recursos esenciales.</p>
     
+    <!-- Barra de búsqueda -->
+    <input type="text" placeholder="Buscar..." id="search-bar">
+
     <!-- Botones -->
     <div class="button-container">
       <a href="https://aea-prod.emro.aero/emro/" target="_blank">eMRO</a>
@@ -167,14 +179,24 @@
       <a href="https://aeamto.atlassian.net/servicedesk/customer/portals" target="_blank">Reportes eMRO</a>
       <a href="MOE_Ed53_Rev04_signed.pdf" target="_blank" download>MOE</a>
     </div>
-  </main>
+    
+    <!-- Noticias -->
+    <section>
+      <h2>Últimas Noticias</h2>
+      <ul>
+        <li>📢 Actualización del MOE (Enero 2025)</li>
+        <li>🛠 Nueva función en eMRO para reportes automáticos.</li>
+        <li>📅 Reunión del equipo MAD programada para el 15 de febrero.</li>
+      </ul>
+    </section>
 
-  <!-- Contáctanos -->
-  <div class="contact-section">
-    <h2>Contáctanos</h2>
-    <p>📧 Email: <a href="mailto:support@aea.com">support@aea.com</a></p>
-    <p>📞 Teléfono: <a href="tel:+34912345678">+34 912 345 678</a></p>
-  </div>
+    <!-- Contacto -->
+    <section>
+      <h2>Contáctanos</h2>
+      <p>📧 Email: <a href="mailto:support@aea.com">support@aea.com</a></p>
+      <p>📞 Teléfono: <a href="tel:+34912345678">+34 912 345 678</a></p>
+    </section>
+  </main>
 
   <footer>
     <p>© 2025 AEA Stores MAD. Todos los derechos reservados.</p>
