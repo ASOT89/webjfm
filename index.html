@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Documentos AEA Stores MAD</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4fUJ8ZrljXtWVK/2oxg+O2iRt7LQkXjqELysFbZ+fuujg1xibXnPExO6h2+5zM5tD5K/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <style>
+    /* Estilo global */
     body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
@@ -21,11 +23,26 @@
       min-height: 100vh;
     }
 
+    /* Fondo de la página */
+    .background-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.1;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Air_Europa_Logo_%282015%29.svg/2560px-Air_Europa_Logo_%282015%29.svg.png') no-repeat center center fixed;
+      background-size: contain;
+    }
+
+    /* Encabezado */
     header {
       background: linear-gradient(to right, #0056a2, #0097e6);
       color: white;
       padding: 20px;
       text-align: center;
+      border-bottom: 5px solid #0056a2;
     }
 
     header h1 {
@@ -33,99 +50,203 @@
       margin: 0;
     }
 
-    main {
-      flex: 1;
+    header img {
+      width: 60px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    /* Botones */
+    .button-container {
+      margin-top: 20px;
       display: flex;
       justify-content: center;
-      align-items: center;
-      padding: 20px;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding: 0 10px;
     }
 
-    #map {
-      width: 800px;
-      height: 500px;
-      margin: auto;
-      border-radius: 10px;
-      border: 1px solid #ccc;
+    .button-container a {
+      text-decoration: none;
+      color: white;
+      background-color: #0056a2;
+      padding: 15px 25px;
+      border-radius: 50px;
+      font-size: 1em;
+      text-align: center;
+      transition: background-color 0.3s, transform 0.2s;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      flex: 1;
+      max-width: 200px;
     }
 
-    .formulario-contacto {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      width: 300px;
-      background-color: #eef6ff;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
+    .button-container a:hover {
+      background-color: #007acc;
+      transform: translateY(-2px);
     }
 
-    .formulario-contacto h2 {
-      margin-top: 0;
+    /* Noticias */
+    section {
+      margin: 30px auto;
+      max-width: 800px;
+    }
+
+    section h2 {
       color: #0056a2;
-      font-size: 1.2em;
+      margin-bottom: 15px;
     }
 
-    .formulario-contacto input,
-    .formulario-contacto textarea,
-    .formulario-contacto button {
-      width: calc(100% - 20px);
+    section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    section ul li {
+      background: #eef6ff;
       margin: 10px 0;
+      padding: 10px 15px;
+      border-radius: 5px;
+      text-align: left;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Formulario de contacto */
+    form {
+      margin: 20px auto;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+      max-width: 500px;
+    }
+
+    form input, form textarea, form button {
+      width: calc(100% - 30px);
+      margin: 10px 15px;
       padding: 10px;
       font-size: 1em;
       border: 1px solid #ccc;
       border-radius: 5px;
     }
 
-    .formulario-contacto button {
+    form button {
       background-color: #0056a2;
       color: white;
-      border: none;
       cursor: pointer;
+      border: none;
       transition: background-color 0.3s;
     }
 
-    .formulario-contacto button:hover {
+    form button:hover {
       background-color: #007acc;
     }
 
+    /* Pie de página */
     footer {
-      padding: 10px;
+      margin-top: auto;
+      padding: 15px 0;
       background-color: #0056a2;
       color: white;
+      font-size: 0.9em;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    footer ul li {
+      display: inline;
+      margin: 0 10px;
+    }
+
+    footer ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Mapa */
+    #map {
+      height: 400px;
+      margin: 20px auto;
+      max-width: 800px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
     }
   </style>
 </head>
 <body>
+  <div class="background-image"></div>
   <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Air_Europa_Logo_%282015%29.svg/2560px-Air_Europa_Logo_%282015%29.svg.png" alt="Logo Air Europa">
     <h1>Documentos AEA Stores MAD</h1>
   </header>
-
   <main>
+    <p>Bienvenido a la página oficial de documentos para AEA Stores MAD.</p>
+    
+    <!-- Botones -->
+    <div class="button-container">
+      <a href="https://aea-prod.emro.aero/emro/" target="_blank">eMRO</a>
+      <a href="https://staff.aireuropa.com/auth" target="_blank">AE Staff</a>
+      <a href="https://www.flightradar24.com/40.37,-3.70/6" target="_blank">Flight Radar</a>
+      <a href="https://netspark.eu/fmi/webd" target="_blank">Relevo</a>
+      <a href="https://aeamto.atlassian.net/servicedesk/customer/portals" target="_blank">Reportes eMRO</a>
+      <a href="MOE_Ed53_Rev04_signed.pdf" target="_blank" download>MOE</a>
+    </div>
+
+    <!-- Noticias dinámicas -->
+    <section id="noticias">
+      <h2>Últimas Noticias</h2>
+      <ul>
+        <li>Cargando noticias...</li>
+      </ul>
+    </section>
+
+    <!-- Formulario de contacto -->
+    <section>
+      <h2>Formulario de Contacto</h2>
+      <form>
+        <input type="text" name="name" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu correo electrónico" required>
+        <textarea name="message" placeholder="Tu mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
     <!-- Mapa -->
     <div id="map"></div>
   </main>
 
-  <!-- Formulario de contacto -->
-  <div class="formulario-contacto">
-    <h2>Formulario de Contacto</h2>
-    <form>
-      <input type="text" name="name" placeholder="Tu nombre" required>
-      <input type="email" name="email" placeholder="Tu correo electrónico" required>
-      <textarea name="message" placeholder="Tu mensaje" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-  </div>
-
   <footer>
-    <p>© 2025 AEA Stores MAD. Todos los derechos reservados.</p>
+    <p>© <span id="year"></span> AEA Stores MAD. Todos los derechos reservados.</p>
+    <ul>
+      <li><a href="#politica-privacidad">Política de Privacidad</a></li>
+      <li><a href="#terminos">Términos y Condiciones</a></li>
+      <li><a href="#ayuda">Ayuda</a></li>
+    </ul>
   </footer>
 
   <script>
+    // Añadir año dinámico al pie de página
+    document.getElementById('year').textContent = new Date().getFullYear();
+
     // Mapa interactivo con LeafletJS
     const map = L.map('map').setView([40.4168, -3.7038], 10);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+    // Noticias dinámicas simuladas
+    const noticias = [
+      { title: 'Actualización del MOE', content: 'Nueva versión disponible.' },
+      { title: 'Reunión programada', content: 'Reunión del equipo MAD el 15 de febrero.' },
+    ];
+    const ul = document.querySelector('#noticias ul');
+    ul.innerHTML = noticias.map(n => `<li><h3>${n.title}</h3><p>${n.content}</p></li>`).join('');
   </script>
 </body>
 </html>
