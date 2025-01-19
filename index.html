@@ -61,6 +61,7 @@
       color: #000; /* Negro intenso */
       font-weight: bold;
       margin: 20px auto;
+      max-width: 800px;
     }
 
     /* Botones */
@@ -93,34 +94,54 @@
     }
 
     /* Formulario de contacto */
-    form {
-      margin: 20px auto;
+    .formulario-contacto {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 300px;
+      background-color: #eef6ff;
       padding: 15px;
-      border: 1px solid #ccc;
       border-radius: 10px;
-      background-color: #f9f9f9;
-      max-width: 500px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
     }
 
-    form input, form textarea, form button {
-      width: calc(100% - 30px);
-      margin: 10px 15px;
+    .formulario-contacto h2 {
+      margin-top: 0;
+      color: #0056a2;
+      font-size: 1.2em;
+    }
+
+    .formulario-contacto input,
+    .formulario-contacto textarea,
+    .formulario-contacto button {
+      width: calc(100% - 20px);
+      margin: 10px 0;
       padding: 10px;
       font-size: 1em;
       border: 1px solid #ccc;
       border-radius: 5px;
     }
 
-    form button {
+    .formulario-contacto button {
       background-color: #0056a2;
       color: white;
-      cursor: pointer;
       border: none;
+      cursor: pointer;
       transition: background-color 0.3s;
     }
 
-    form button:hover {
+    .formulario-contacto button:hover {
       background-color: #007acc;
+    }
+
+    /* Mapa */
+    #map {
+      height: 400px;
+      margin: 20px auto;
+      max-width: 800px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
     }
 
     /* Pie de página */
@@ -152,15 +173,6 @@
     footer ul li a:hover {
       text-decoration: underline;
     }
-
-    /* Mapa */
-    #map {
-      height: 400px;
-      margin: 20px auto;
-      max-width: 800px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-    }
   </style>
 </head>
 <body>
@@ -169,9 +181,10 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Air_Europa_Logo_%282015%29.svg/2560px-Air_Europa_Logo_%282015%29.svg.png" alt="Logo Air Europa">
     <h1>AEA Stores MAD</h1>
   </header>
+
   <main>
     <p class="welcome-text">Bienvenido a los accesos directos para AEA Stores MAD.</p>
-    
+
     <!-- Botones -->
     <div class="button-container">
       <a href="https://aea-prod.emro.aero/emro/" target="_blank">eMRO</a>
@@ -182,9 +195,37 @@
       <a href="MOE_Ed53_Rev04_signed.pdf" target="_blank" download>MOE</a>
     </div>
 
-    <!-- Formulario de contacto -->
-    <section>
-      <h2>Formulario de Contacto</h2>
-      <form>
-        <input type="text" name="name" placeholder="Tu nombre" required>
-        <input type="email" name="email" placeholder="Tu correo ele
+    <!-- Mapa -->
+    <div id="map"></div>
+  </main>
+
+  <!-- Formulario de contacto -->
+  <div class="formulario-contacto">
+    <h2>Formulario de Contacto</h2>
+    <form>
+      <input type="text" name="name" placeholder="Tu nombre" required>
+      <input type="email" name="email" placeholder="Tu correo electrónico" required>
+      <textarea name="message" placeholder="Tu mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>© <span id="year"></span> AEA Stores MAD. Todos los derechos reservados.</p>
+    <ul>
+      <li><a href="#politica-privacidad">Política de Privacidad</a></li>
+      <li><a href="#terminos">Términos y Condiciones</a></li>
+      <li><a href="#ayuda">Ayuda</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    // Añadir año dinámico al pie de página
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mapa interactivo con LeafletJS
+    const map = L.map('map').setView([40.4168, -3.7038], 10);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+  </script>
+</body>
+</html>
