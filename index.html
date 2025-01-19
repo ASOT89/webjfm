@@ -4,14 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Documentos AEA Stores MAD</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     /* Estilo global */
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f0f0f0; /* Color de fondo neutro */
-      color: white;
+      background-color: #f4f4f9;
+      color: #333;
       text-align: center;
       line-height: 1.6;
       display: flex;
@@ -19,7 +20,7 @@
       min-height: 100vh;
     }
 
-    /* Imagen de fondo */
+    /* Fondo de la página */
     .background-image {
       position: fixed;
       top: 0;
@@ -27,51 +28,42 @@
       width: 100%;
       height: 100%;
       z-index: -1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-
-    .background-image img {
-      max-width: 60%;
-      max-height: 60%;
-    }
-
-    @media (max-width: 768px) {
-      .background-image img {
-        max-width: 80%;
-        max-height: 80%;
-      }
+      opacity: 0.1;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Air_Europa_Logo_%282015%29.svg/2560px-Air_Europa_Logo_%282015%29.svg.png') no-repeat center center fixed;
+      background-size: contain;
     }
 
     /* Encabezado */
     header {
-      margin-top: 20px;
-      padding: 10px;
+      background: linear-gradient(to right, #0056a2, #0097e6);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 5px solid #0056a2;
     }
 
     header h1 {
-      font-size: 2em;
-      text-shadow: none; /* Sin sombras */
-      color: #000000; /* Negro intenso */
+      font-size: 2.5em;
+      margin: 0;
     }
 
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 1.5em;
-      }
+    header img {
+      width: 60px;
+      vertical-align: middle;
+      margin-right: 10px;
     }
 
     /* Texto principal */
     .main-text {
-      color: #000000; /* Negro intenso */
-      margin: 20px;
+      margin: 20px auto;
+      color: #0056a2;
+      max-width: 800px;
+      font-size: 1.2em;
     }
 
     /* Botones */
     .button-container {
-      margin-top: 40px;
+      margin-top: 20px;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -81,51 +73,53 @@
 
     .button-container a {
       text-decoration: none;
-      color: #000000; /* Texto negro */
-      background-color: #add8e6; /* Azul claro */
-      padding: 12px 20px;
-      border-radius: 5px;
+      color: white;
+      background-color: #0056a2;
+      padding: 15px 25px;
+      border-radius: 50px;
       font-size: 1em;
       text-align: center;
       transition: background-color 0.3s, transform 0.2s;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
       flex: 1;
       max-width: 200px;
     }
 
     .button-container a:hover {
-      background-color: #87cefa; /* Azul más oscuro al pasar el ratón */
-      transform: scale(1.05);
-    }
-
-    @media (max-width: 768px) {
-      .button-container a {
-        font-size: 0.9em;
-        padding: 10px 15px;
-      }
+      background-color: #007acc;
+      transform: translateY(-2px);
     }
 
     /* Pie de página */
     footer {
       margin-top: auto;
-      padding: 10px 0;
-      background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
-      font-size: 0.9em;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+      padding: 15px 0;
+      background-color: #0056a2;
       color: white;
+      font-size: 0.9em;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     }
 
     @media (max-width: 768px) {
-      footer {
-        font-size: 0.8em;
+      header h1 {
+        font-size: 1.8em;
+      }
+
+      .button-container a {
+        font-size: 0.9em;
+        padding: 10px 15px;
+      }
+
+      .main-text {
+        font-size: 1em;
       }
     }
   </style>
 </head>
 <body>
-  <div class="background-image">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Air_Europa_Logo_%282015%29.svg/2560px-Air_Europa_Logo_%282015%29.svg.png" alt="Air Europa Logo">
-  </div>
+  <div class="background-image"></div>
   <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Air_Europa_Logo_%282015%29.svg/2560px-Air_Europa_Logo_%282015%29.svg.png" alt="Logo Air Europa">
     <h1>Documentos AEA Stores MAD</h1>
   </header>
   <main>
