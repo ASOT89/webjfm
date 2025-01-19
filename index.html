@@ -15,14 +15,13 @@
       padding: 0;
       background-color: #f4f4f9;
       color: #333;
-      text-align: center;
-      line-height: 1.6;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      line-height: 1.6;
     }
 
-    /* Fondo de la página */
+    /* Fondo dinámico */
     .background-image {
       position: fixed;
       top: 0;
@@ -32,14 +31,7 @@
       z-index: -1;
       opacity: 0.1;
       background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Air_Europa_Logo_%282015%29.svg/2560px-Air_Europa_Logo_%282015%29.svg.png') no-repeat center center fixed;
-      background-size: contain;
-      animation: gradient 10s ease infinite;
-    }
-
-    @keyframes gradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      background-size: cover;
     }
 
     /* Barra de navegación */
@@ -69,7 +61,7 @@
     nav ul li a {
       color: white;
       text-decoration: none;
-      font-size: 1.1em;
+      font-size: 1em;
       font-weight: bold;
       transition: color 0.3s;
     }
@@ -78,14 +70,36 @@
       color: #00aaff;
     }
 
+    /* Encabezado */
+    header {
+      margin-top: 60px;
+      background: linear-gradient(to right, #0056a2, #0097e6);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+
+    /* Texto introductorio */
+    .intro-text {
+      margin: 20px auto;
+      max-width: 800px;
+      font-size: 1.2em;
+      text-align: center;
+      color: #333;
+    }
+
     /* Botones */
     .button-container {
-      margin-top: 60px;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       gap: 15px;
-      padding: 0 10px;
+      margin: 20px;
     }
 
     .button-container a {
@@ -95,37 +109,42 @@
       padding: 15px 25px;
       border-radius: 50px;
       font-size: 1em;
-      text-align: center;
-      transition: background-color 0.3s, transform 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-      flex: 1;
-      max-width: 200px;
     }
 
     .button-container a:hover {
-      background-color: #007acc;
       transform: scale(1.1);
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     }
 
-    /* Formulario de contacto */
-    .formulario-contacto {
-      margin-top: 30px;
-      max-width: 500px;
-      background-color: #eef6ff;
+    /* Gráfico */
+    #chart-container {
+      margin: 30px auto;
+      max-width: 600px;
       padding: 20px;
+      background-color: #eef6ff;
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      text-align: left;
+    }
+
+    /* Formulario de contacto */
+    .formulario-contacto {
+      margin: 30px auto;
+      max-width: 600px;
+      padding: 20px;
+      background-color: #eef6ff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .formulario-contacto input, .formulario-contacto textarea, .formulario-contacto button {
       width: calc(100% - 20px);
       margin: 10px auto;
       padding: 10px;
-      font-size: 1em;
       border: 1px solid #ccc;
       border-radius: 5px;
+      font-size: 1em;
     }
 
     .formulario-contacto button {
@@ -140,32 +159,23 @@
       background-color: #007acc;
     }
 
-    /* Sección de gráficos */
-    #chart-container {
-      margin: 30px auto;
-      max-width: 600px;
-      text-align: center;
-    }
-
     /* Footer */
     footer {
       margin-top: auto;
-      padding: 20px;
-      background-color: #0056a2;
+      background: #0056a2;
       color: white;
+      text-align: center;
+      padding: 20px;
       font-size: 0.9em;
     }
 
     footer ul {
       list-style: none;
       padding: 0;
-      margin: 0;
+      margin: 10px auto 0;
       display: flex;
       justify-content: center;
-    }
-
-    footer ul li {
-      margin: 0 15px;
+      gap: 15px;
     }
 
     footer ul li a {
@@ -176,10 +186,21 @@
     footer ul li a:hover {
       text-decoration: underline;
     }
+
+    @media (max-width: 768px) {
+      .button-container {
+        flex-direction: column;
+      }
+
+      .formulario-contacto {
+        width: 90%;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="background-image"></div>
+
   <!-- Barra de navegación -->
   <nav>
     <ul>
@@ -190,52 +211,55 @@
     </ul>
   </nav>
 
+  <!-- Encabezado -->
   <header>
     <h1>AEA Stores MAD</h1>
   </header>
 
-  <main>
-    <!-- Botones -->
-    <div id="botones" class="button-container">
-      <a href="https://aea-prod.emro.aero/emro/" target="_blank">eMRO</a>
-      <a href="https://staff.aireuropa.com/auth" target="_blank">AE Staff</a>
-      <a href="https://www.flightradar24.com/40.37,-3.70/6" target="_blank">Flight Radar</a>
-      <a href="https://netspark.eu/fmi/webd" target="_blank">Relevo</a>
-      <a href="https://aeamto.atlassian.net/servicedesk/customer/portals" target="_blank">Reportes eMRO</a>
-    </div>
+  <!-- Introducción -->
+  <p class="intro-text">Bienvenido a los accesos directos para AEA Stores MAD.</p>
 
-    <!-- Gráfico -->
-    <div id="chart-container">
-      <canvas id="chart"></canvas>
-    </div>
+  <!-- Botones -->
+  <div id="botones" class="button-container">
+    <a href="https://aea-prod.emro.aero/emro/" target="_blank">eMRO</a>
+    <a href="https://staff.aireuropa.com/auth" target="_blank">AE Staff</a>
+    <a href="https://www.flightradar24.com/40.37,-3.70/6" target="_blank">Flight Radar</a>
+    <a href="https://netspark.eu/fmi/webd" target="_blank">Relevo</a>
+    <a href="https://aeamto.atlassian.net/servicedesk/customer/portals" target="_blank">Reportes eMRO</a>
+  </div>
 
-    <script>
-      const ctx = document.getElementById('chart').getContext('2d');
-      new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: ['Enero', 'Febrero', 'Marzo'],
-          datasets: [{
-            label: 'Usuarios Activos',
-            data: [12, 19, 3],
-            backgroundColor: ['#0056a2', '#0097e6', '#eef6ff']
-          }]
-        }
-      });
-    </script>
+  <!-- Gráfico -->
+  <div id="chart-container">
+    <canvas id="chart"></canvas>
+  </div>
 
-    <!-- Formulario de contacto -->
-    <div id="contacto" class="formulario-contacto">
-      <h2>Formulario de Contacto</h2>
-      <form>
-        <input type="text" name="name" placeholder="Tu nombre" required>
-        <input type="email" name="email" placeholder="Tu correo electrónico" required>
-        <textarea name="message" placeholder="Tu mensaje" required></textarea>
-        <button type="submit">Enviar</button>
-      </form>
-    </div>
-  </main>
+  <script>
+    const ctx = document.getElementById('chart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Enero', 'Febrero', 'Marzo'],
+        datasets: [{
+          label: 'Usuarios Activos',
+          data: [12, 19, 3],
+          backgroundColor: ['#0056a2', '#0097e6', '#eef6ff']
+        }]
+      }
+    });
+  </script>
 
+  <!-- Formulario de contacto -->
+  <div id="contacto" class="formulario-contacto">
+    <h2>Formulario de Contacto</h2>
+    <form>
+      <input type="text" name="name" placeholder="Tu nombre" required>
+      <input type="email" name="email" placeholder="Tu correo electrónico" required>
+      <textarea name="message" placeholder="Tu mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
   <footer>
     <p>© 2025 AEA Stores MAD. Todos los derechos reservados.</p>
     <ul>
