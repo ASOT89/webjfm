@@ -93,17 +93,23 @@
       transform: translateY(-2px);
     }
 
+    /* Contenedor del mapa y formulario */
+    .map-form-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
     /* Formulario de contacto */
     .formulario-contacto {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
       width: 300px;
       background-color: #eef6ff;
       padding: 15px;
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
     }
 
     .formulario-contacto h2 {
@@ -139,7 +145,6 @@
     #map {
       height: 400px;
       width: 800px;
-      margin: 60% auto 20px; /* Bajamos el mapa un 60% */
       border: 1px solid #ccc;
       border-radius: 10px;
     }
@@ -195,20 +200,23 @@
       <a href="MOE_Ed53_Rev04_signed.pdf" target="_blank" download>MOE</a>
     </div>
 
-    <!-- Mapa -->
-    <div id="map"></div>
-  </main>
+    <!-- Contenedor de mapa y formulario -->
+    <div class="map-form-container">
+      <!-- Formulario de contacto -->
+      <div class="formulario-contacto">
+        <h2>Formulario de Contacto</h2>
+        <form>
+          <input type="text" name="name" placeholder="Tu nombre" required>
+          <input type="email" name="email" placeholder="Tu correo electrónico" required>
+          <textarea name="message" placeholder="Tu mensaje" required></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
 
-  <!-- Formulario de contacto -->
-  <div class="formulario-contacto">
-    <h2>Formulario de Contacto</h2>
-    <form>
-      <input type="text" name="name" placeholder="Tu nombre" required>
-      <input type="email" name="email" placeholder="Tu correo electrónico" required>
-      <textarea name="message" placeholder="Tu mensaje" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-  </div>
+      <!-- Mapa -->
+      <div id="map"></div>
+    </div>
+  </main>
 
   <footer>
     <p>© <span id="year"></span> AEA Stores MAD. Todos los derechos reservados.</p>
