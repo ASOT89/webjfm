@@ -52,21 +52,6 @@
       transform: scale(1.05);
     }
 
-    /* Widget del mapa */
-    .map-widget {
-      margin: 40px auto;
-      max-width: 90%;
-      border: 3px solid rgba(255, 255, 255, 0.8);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    iframe {
-      width: 100%;
-      height: 500px;
-      border: none;
-    }
-
     /* Pie de página */
     footer {
       margin-top: 40px;
@@ -84,21 +69,11 @@
     <div class="button-container">
       <a href="https://aea-prod.emro.aero/emro/" target="_blank">eMRO</a>
       <a href="https://staff.aireuropa.com/auth" target="_blank">AE Staff</a>
-      <a href="#" target="_blank">Botón 3</a>
+      <a href="https://www.flightradar24.com/40.37,-3.70/6" target="_blank">Flight Radar</a>
       <a href="#" target="_blank">Botón 4</a>
       <a href="#" target="_blank">Botón 5</a>
     </div>
   </main>
-  <section>
-    <h2>Mapa de vuelos en tiempo real</h2>
-    <div class="map-widget">
-      <iframe 
-        src="https://www.flightradar24.com/40.37,-3.70/6" 
-        title="Mapa de vuelos FlightRadar24"
-        loading="lazy">
-      </iframe>
-    </div>
-  </section>
   <footer>
     <p>© 2025 AEA Stores MAD. Todos los derechos reservados.</p>
   </footer>
