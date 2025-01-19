@@ -53,13 +53,20 @@
 
     header h1 {
       font-size: 2em;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      text-shadow: none; /* Sin sombras */
+      color: #000000; /* Negro intenso */
     }
 
     @media (max-width: 768px) {
       header h1 {
         font-size: 1.5em;
       }
+    }
+
+    /* Texto principal */
+    .main-text {
+      color: #000000; /* Negro intenso */
+      margin: 20px;
     }
 
     /* Botones */
@@ -122,7 +129,7 @@
     <h1>Documentos AEA Stores MAD</h1>
   </header>
   <main>
-    <p>Bienvenido a la página oficial de documentos para AEA Stores MAD. Accede rápidamente a las herramientas y recursos esenciales.</p>
+    <p class="main-text">Bienvenido a la página oficial de documentos para AEA Stores MAD. Accede rápidamente a las herramientas y recursos esenciales.</p>
     <div class="button-container">
       <a href="https://aea-prod.emro.aero/emro/" target="_blank">eMRO</a>
       <a href="https://staff.aireuropa.com/auth" target="_blank">AE Staff</a>
