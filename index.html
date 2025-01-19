@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Documentos AEA Stores MAD</title>
+  <title>AEA Stores MAD</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4fUJ8ZrljXtWVK/2oxg+O2iRt7LQkXjqELysFbZ+fuujg1xibXnPExO6h2+5zM5tD5K/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <style>
@@ -54,6 +53,14 @@
       width: 60px;
       vertical-align: middle;
       margin-right: 10px;
+    }
+
+    /* Texto de bienvenida */
+    .welcome-text {
+      font-size: 1.5em;
+      color: #000; /* Negro intenso */
+      font-weight: bold;
+      margin: 20px auto;
     }
 
     /* Botones */
@@ -160,10 +167,10 @@
   <div class="background-image"></div>
   <header>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Air_Europa_Logo_%282015%29.svg/2560px-Air_Europa_Logo_%282015%29.svg.png" alt="Logo Air Europa">
-    <h1>Documentos AEA Stores MAD</h1>
+    <h1>AEA Stores MAD</h1>
   </header>
   <main>
-    <p>Bienvenido a la página oficial de documentos para AEA Stores MAD.</p>
+    <p class="welcome-text">Bienvenido a los accesos directos para AEA Stores MAD.</p>
     
     <!-- Botones -->
     <div class="button-container">
@@ -180,32 +187,4 @@
       <h2>Formulario de Contacto</h2>
       <form>
         <input type="text" name="name" placeholder="Tu nombre" required>
-        <input type="email" name="email" placeholder="Tu correo electrónico" required>
-        <textarea name="message" placeholder="Tu mensaje" required></textarea>
-        <button type="submit">Enviar</button>
-      </form>
-    </section>
-
-    <!-- Mapa -->
-    <div id="map"></div>
-  </main>
-
-  <footer>
-    <p>© <span id="year"></span> AEA Stores MAD. Todos los derechos reservados.</p>
-    <ul>
-      <li><a href="#politica-privacidad">Política de Privacidad</a></li>
-      <li><a href="#terminos">Términos y Condiciones</a></li>
-      <li><a href="#ayuda">Ayuda</a></li>
-    </ul>
-  </footer>
-
-  <script>
-    // Añadir año dinámico al pie de página
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Mapa interactivo con LeafletJS
-    const map = L.map('map').setView([40.4168, -3.7038], 10);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-  </script>
-</body>
-</html>
+        <input type="email" name="email" placeholder="Tu correo ele
