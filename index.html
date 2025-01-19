@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Documentos AEA Stores MAD</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4fUJ8ZrljXtWVK/2oxg+O2iRt7LQkXjqELysFbZ+fuujg1xibXnPExO6h2+5zM5tD5K/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     /* Estilo global */
     body {
@@ -90,6 +91,42 @@
       transform: translateY(-2px);
     }
 
+    /* Sección de Noticias */
+    section {
+      margin: 30px auto;
+      max-width: 800px;
+    }
+
+    section h2 {
+      color: #0056a2;
+      margin-bottom: 15px;
+    }
+
+    section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    section ul li {
+      background: #eef6ff;
+      margin: 10px 0;
+      padding: 10px 15px;
+      border-radius: 5px;
+      text-align: left;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Búsqueda */
+    #search-bar {
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin: 20px 0;
+      width: 80%;
+      max-width: 500px;
+    }
+
     /* Pie de página */
     footer {
       margin-top: auto;
@@ -100,19 +137,24 @@
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     }
 
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 1.8em;
-      }
+    footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
 
-      .button-container a {
-        font-size: 0.9em;
-        padding: 10px 15px;
-      }
+    footer ul li {
+      display: inline;
+      margin: 0 10px;
+    }
 
-      .main-text {
-        font-size: 1em;
-      }
+    footer ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer ul li a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -124,6 +166,11 @@
   </header>
   <main>
     <p class="main-text">Bienvenido a la página oficial de documentos para AEA Stores MAD. Accede rápidamente a las herramientas y recursos esenciales.</p>
+    
+    <!-- Barra de búsqueda -->
+    <input type="text" placeholder="Buscar..." id="search-bar">
+
+    <!-- Botones -->
     <div class="button-container">
       <a href="https://aea-prod.emro.aero/emro/" target="_blank">eMRO</a>
       <a href="https://staff.aireuropa.com/auth" target="_blank">AE Staff</a>
@@ -132,9 +179,32 @@
       <a href="https://aeamto.atlassian.net/servicedesk/customer/portals" target="_blank">Reportes eMRO</a>
       <a href="MOE_Ed53_Rev04_signed.pdf" target="_blank" download>MOE</a>
     </div>
+    
+    <!-- Noticias -->
+    <section>
+      <h2>Últimas Noticias</h2>
+      <ul>
+        <li>📢 Actualización del MOE (Enero 2025)</li>
+        <li>🛠 Nueva función en eMRO para reportes automáticos.</li>
+        <li>📅 Reunión del equipo MAD programada para el 15 de febrero.</li>
+      </ul>
+    </section>
+
+    <!-- Contacto -->
+    <section>
+      <h2>Contáctanos</h2>
+      <p>📧 Email: <a href="mailto:support@aea.com">support@aea.com</a></p>
+      <p>📞 Teléfono: <a href="tel:+34912345678">+34 912 345 678</a></p>
+    </section>
   </main>
+
   <footer>
     <p>© 2025 AEA Stores MAD. Todos los derechos reservados.</p>
+    <ul>
+      <li><a href="#politica-privacidad">Política de Privacidad</a></li>
+      <li><a href="#terminos">Términos y Condiciones</a></li>
+      <li><a href="#ayuda">Ayuda</a></li>
+    </ul>
   </footer>
 </body>
 </html>
