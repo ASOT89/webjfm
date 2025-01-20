@@ -244,6 +244,14 @@
       transform: scale(1.1);
     }
 
+    .planifica-section .app-links img:first-child {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 75px;
+      width: auto;
+    }
+
     /* Footer */
     footer {
       margin-top: auto;
@@ -340,36 +348,4 @@
   </div>
 
   <!-- Modal de Contacto -->
-  <div id="modalOverlay" onclick="closeContactoModal()"></div>
-  <div id="modalContacto">
-    <h2>Contacto</h2>
-    <p>Para cualquier consulta o pregunta referente a las bases de datos pueden contactar con:</p>
-    <p>AEA Stores MAD: Zona Modular Naves 30-31 Terminal Ejecutiva.<br>
-    28042 Adolfo Suarez-Madrid Barajas<br>
-    Teléfono: (+34) 91-3937026</p>
-    <button class="close-btn" onclick="closeContactoModal()">Cerrar</button>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 AEA Stores MAD. Todos los derechos reservados.</p>
-    <ul>
-      <li><a href="#">Política de Privacidad</a></li>
-      <li><a href="#">Términos y Condiciones</a></li>
-      <li><a href="#">Ayuda</a></li>
-    </ul>
-  </footer>
-
-  <script>
-    function openContactoModal() {
-      document.getElementById('modalContacto').style.display = 'block';
-      document.getElementById('modalOverlay').style.display = 'block';
-    }
-
-    function closeContactoModal() {
-      document.getElementById('modalContacto').style.display = 'none';
-      document.getElementById('modalOverlay').style.display = 'none';
-    }
-  </script>
-</body>
-</html>
+  <div id="
