@@ -118,69 +118,6 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     }
 
-    /* Gráfico */
-    #chart-container {
-      margin: 30px auto;
-      max-width: 600px;
-      padding: 20px;
-      background-color: #eef6ff;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Modal de contacto */
-    #modalContacto {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      max-width: 500px;
-      padding: 20px;
-      z-index: 2000;
-    }
-
-    #modalContacto h2 {
-      margin-top: 0;
-      color: #0056a2;
-    }
-
-    #modalContacto p {
-      line-height: 1.8;
-      color: #333;
-    }
-
-    #modalOverlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 1500;
-    }
-
-    .close-btn {
-      display: block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #0056a2;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      text-align: center;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .close-btn:hover {
-      background-color: #007acc;
-    }
-
     /* Tablón de anuncios */
     .tablon-anuncios {
       margin: 40px auto;
@@ -265,7 +202,6 @@
     <ul>
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#botones">Accesos</a></li>
-      <li><a href="#chart-container">Gráficos</a></li>
       <li><a href="#tablon">Tablón de Anuncios</a></li>
       <li><a href="#" onclick="openContactoModal()">Contacto</a></li>
     </ul>
@@ -290,37 +226,7 @@
     <a href="Outstations.pdf" target="_blank" download>OutStation</a>
   </div>
 
-  <!-- Gráfico -->
-  <div id="chart-container">
-    <canvas id="chart"></canvas>
-  </div>
-
-  <script>
-    const ctx = document.getElementById('chart').getContext('2d');
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Enero', 'Febrero', 'Marzo'],
-        datasets: [{
-          label: 'Usuarios Activos',
-          data: [12, 19, 3],
-          backgroundColor: ['#0056a2', '#0097e6', '#eef6ff']
-        }]
-      }
-    });
-
-    function openContactoModal() {
-      document.getElementById('modalContacto').style.display = 'block';
-      document.getElementById('modalOverlay').style.display = 'block';
-    }
-
-    function closeContactoModal() {
-      document.getElementById('modalContacto').style.display = 'none';
-      document.getElementById('modalOverlay').style.display = 'none';
-    }
-  </script>
-
-  <!-- Tablón de anuncios -->
+  <!-- Tablón de Anuncios (en lugar del gráfico) -->
   <div id="tablon" class="tablon-anuncios">
     <h2>Tablón de Anuncios</h2>
     <ul>
@@ -332,25 +238,18 @@
     </ul>
   </div>
 
+  <script>
+    function openContactoModal() {
+      document.getElementById('modalContacto').style.display = 'block';
+      document.getElementById('modalOverlay').style.display = 'block';
+    }
+
+    function closeContactoModal() {
+      document.getElementById('modalContacto').style.display = 'none';
+      document.getElementById('modalOverlay').style.display = 'none';
+    }
+  </script>
+
   <!-- Modal de Contacto -->
   <div id="modalOverlay" onclick="closeContactoModal()"></div>
-  <div id="modalContacto">
-    <h2>Contacto</h2>
-    <p>Para cualquier consulta o pregunta referente a las bases de datos pueden contactar con:</p>
-    <p>AEA Stores MAD: Zona Modular Naves 30-31 Terminal Ejecutiva.<br>
-    28042 Adolfo Suarez-Madrid Barajas<br>
-    Teléfono: (+34) 91-3937026</p>
-    <button class="close-btn" onclick="closeContactoModal()">Cerrar</button>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 AEA Stores MAD. Todos los derechos reservados.</p>
-    <ul>
-      <li><a href="#">Política de Privacidad</a></li>
-      <li><a href="#">Términos y Condiciones</a></li>
-      <li><a href="#">Ayuda</a></li>
-    </ul>
-  </footer>
-</body>
-</html>
+  <div id="modal
