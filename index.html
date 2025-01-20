@@ -128,57 +128,41 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-    /* Modal de contacto */
-    #modalContacto {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: white;
+    /* Tablón de anuncios */
+    .tablon-anuncios {
+      margin: 40px auto;
+      max-width: 800px;
+      padding: 20px;
+      background-color: #eef6ff;
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      max-width: 500px;
-      padding: 20px;
-      z-index: 2000;
-    }
-
-    #modalContacto h2 {
-      margin-top: 0;
-      color: #0056a2;
-    }
-
-    #modalContacto p {
-      line-height: 1.8;
-      color: #333;
-    }
-
-    #modalOverlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 1500;
-    }
-
-    .close-btn {
-      display: block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #0056a2;
-      color: white;
-      border: none;
-      border-radius: 5px;
       text-align: center;
-      cursor: pointer;
-      transition: background-color 0.3s;
     }
 
-    .close-btn:hover {
-      background-color: #007acc;
+    .tablon-anuncios h2 {
+      color: #0056a2;
+      font-size: 2em;
+      margin-bottom: 15px;
+    }
+
+    .tablon-anuncios ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+    }
+
+    .tablon-anuncios ul li {
+      background-color: #fff;
+      padding: 10px;
+      margin: 10px auto;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .tablon-anuncios ul li:hover {
+      background-color: #f9f9f9;
     }
 
     /* Footer */
