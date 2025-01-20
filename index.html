@@ -236,6 +236,21 @@
       text-decoration: underline;
     }
 
+    /* Estilo del QR */
+    .qr-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .qr-container img {
+      width: 100px;
+      height: 100px;
+      border: 2px solid #0056a2;
+      border-radius: 10px;
+    }
+
     @media (max-width: 768px) {
       .button-container {
         flex-direction: column;
@@ -298,6 +313,11 @@
     28042 Adolfo Suarez-Madrid Barajas<br>
     Teléfono: (+34) 91-3937026</p>
     <button class="close-btn" onclick="closeContactoModal()">Cerrar</button>
+  </div>
+
+  <!-- QR Code -->
+  <div class="qr-container">
+    <img src="image.png" alt="QR Code">
   </div>
 
   <!-- Footer -->
