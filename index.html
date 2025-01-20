@@ -128,35 +128,38 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-    /* Formulario de contacto */
-    .formulario-contacto {
+    /* Tablón de anuncios */
+    .tablon-anuncios {
       margin: 30px auto;
-      max-width: 600px;
+      max-width: 800px;
       padding: 20px;
       background-color: #eef6ff;
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-    .formulario-contacto input, .formulario-contacto textarea, .formulario-contacto button {
-      width: calc(100% - 20px);
-      margin: 10px auto;
+    .tablon-anuncios h2 {
+      text-align: center;
+      color: #0056a2;
+    }
+
+    .tablon-anuncios ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .tablon-anuncios ul li {
+      background-color: #fff;
       padding: 10px;
+      margin: 10px 0;
       border: 1px solid #ccc;
       border-radius: 5px;
-      font-size: 1em;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
-    .formulario-contacto button {
-      background-color: #0056a2;
-      color: white;
-      cursor: pointer;
-      border: none;
-      transition: background-color 0.3s;
-    }
-
-    .formulario-contacto button:hover {
-      background-color: #007acc;
+    .tablon-anuncios ul li:hover {
+      background-color: #f9f9f9;
     }
 
     /* Footer */
@@ -192,7 +195,7 @@
         flex-direction: column;
       }
 
-      .formulario-contacto {
+      .tablon-anuncios {
         width: 90%;
       }
     }
@@ -207,7 +210,7 @@
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#botones">Accesos</a></li>
       <li><a href="#chart-container">Gráficos</a></li>
-      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#tablon">Tablón de Anuncios</a></li>
     </ul>
   </nav>
 
@@ -249,15 +252,14 @@
     });
   </script>
 
-  <!-- Formulario de contacto -->
-  <div id="contacto" class="formulario-contacto">
-    <h2>Formulario de Contacto</h2>
-    <form>
-      <input type="text" name="name" placeholder="Tu nombre" required>
-      <input type="email" name="email" placeholder="Tu correo electrónico" required>
-      <textarea name="message" placeholder="Tu mensaje" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
+  <!-- Tablón de anuncios -->
+  <div id="tablon" class="tablon-anuncios">
+    <h2>Tablón de Anuncios</h2>
+    <ul>
+      <li>Anuncio 1: Nueva actualización disponible en eMRO.</li>
+      <li>Anuncio 2: Recordatorio: Revisión de seguridad programada para el próximo lunes.</li>
+      <li>Anuncio 3: Incorporación de nuevos procedimientos en el MOE.</li>
+    </ul>
   </div>
 
   <!-- Footer -->
