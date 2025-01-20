@@ -176,36 +176,49 @@
       margin: 40px auto;
       max-width: 800px;
       padding: 20px;
-      background-color: #eef6ff;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      background: linear-gradient(to bottom, #e0f7ff, #b3e5fc);
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
       text-align: center;
     }
 
     .tablon-anuncios h2 {
       color: #0056a2;
-      font-size: 2em;
-      margin-bottom: 15px;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     .tablon-anuncios ul {
       list-style: none;
       padding: 0;
       margin: 0;
-      text-align: left;
     }
 
     .tablon-anuncios ul li {
-      background-color: #fff;
-      padding: 10px;
+      background: #ffffff;
       margin: 10px auto;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .tablon-anuncios ul li::before {
+      content: "\f00c";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      color: #0056a2;
+      margin-right: 10px;
+      font-size: 1.5em;
     }
 
     .tablon-anuncios ul li:hover {
-      background-color: #f9f9f9;
+      background: #f1f8ff;
+      transform: scale(1.02);
+      transition: transform 0.2s ease, background 0.2s ease;
     }
 
     /* Planifica Section */
