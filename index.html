@@ -118,8 +118,8 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     }
 
-    /* Modal de contacto */
-    #modalContacto {
+    /* Modal de contacto y "¿Quiénes somos?" */
+    #modalContacto, #modalQuienesSomos {
       display: none;
       position: fixed;
       top: 50%;
@@ -134,12 +134,12 @@
       z-index: 2000;
     }
 
-    #modalContacto h2 {
+    #modalContacto h2, #modalQuienesSomos h2 {
       margin-top: 0;
       color: #0056a2;
     }
 
-    #modalContacto p {
+    #modalContacto p, #modalQuienesSomos p {
       line-height: 1.8;
       color: #333;
     }
@@ -285,7 +285,7 @@
     <ul>
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#" onclick="openContactoModal()">Contacto</a></li>
-      <li><a href="#quienes-somos">¿Quiénes Somos?</a></li>
+      <li><a href="#" onclick="openQuienesSomosModal()">¿Quiénes Somos?</a></li>
     </ul>
   </nav>
 
@@ -336,7 +336,8 @@
   </div>
 
   <!-- Modal de Contacto -->
-  <div id="modalOverlay" onclick="closeContactoModal()"></div>
+  <div id="modalOverlay" onclick="closeModal()"></div>
+
   <div id="modalContacto">
     <h2>Contacto</h2>
     <p>AEA Stores MAD: Zona Modular Naves 30-31 Terminal Ejecutiva.<br>
@@ -348,7 +349,16 @@
         width="100%" height="300" style="border:0; border-radius: 10px;" 
         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-    <button class="close-btn" onclick="closeContactoModal()">Cerrar</button>
+    <button class="close-btn" onclick="closeModal()">Cerrar</button>
+  </div>
+
+  <!-- Modal "¿Quiénes Somos?" -->
+  <div id="modalQuienesSomos">
+    <h2>¿Quiénes Somos?</h2>
+    <p>En el Departamento de Logística de Air Europa, específicamente en el Almacén de Mantenimiento de Madrid, somos el núcleo operativo que asegura la gestión eficiente y segura de los recursos aeronáuticos de la compañía. Nuestra labor se centra en prestar un servicio integral a los Técnicos de Mantenimiento Aeronáutico (TMA) de Air Europa, facilitándoles los materiales necesarios para garantizar la excelencia operativa de nuestra flota.</p>
+    <p>Además, trabajamos en estrecha colaboración con otros departamentos de la compañía, gestionando sus solicitudes e inputs, y asegurándonos de que cada pieza o recurso llegue a su destino de forma óptima. Nuestro compromiso no solo se limita a Air Europa; también ofrecemos soporte logístico a terceras empresas del sector aeronáutico, gestionando y manejando sus materiales con el mismo nivel de profesionalidad y precisión que aplicamos en nuestras propias operaciones.</p>
+    <p>Con un enfoque en la calidad, la seguridad y la eficiencia, nuestro equipo es el motor que garantiza que los engranajes de la logística aeronáutica sigan funcionando sin interrupciones, contribuyendo al éxito y la sostenibilidad de nuestras operaciones y las de nuestros socios.</p>
+    <button class="close-btn" onclick="closeModal()">Cerrar</button>
   </div>
 
   <!-- Footer -->
@@ -367,8 +377,14 @@
       document.getElementById('modalOverlay').style.display = 'block';
     }
 
-    function closeContactoModal() {
+    function openQuienesSomosModal() {
+      document.getElementById('modalQuienesSomos').style.display = 'block';
+      document.getElementById('modalOverlay').style.display = 'block';
+    }
+
+    function closeModal() {
       document.getElementById('modalContacto').style.display = 'none';
+      document.getElementById('modalQuienesSomos').style.display = 'none';
       document.getElementById('modalOverlay').style.display = 'none';
     }
   </script>
