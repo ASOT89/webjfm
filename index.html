@@ -176,27 +176,14 @@
       margin: 40px auto;
       max-width: 800px;
       padding: 20px;
-      background: linear-gradient(to bottom, #e0f7ff, #b3e5fc);
+      background: transparent; /* Fondo transparente */
       border-radius: 15px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      box-shadow: none; /* Elimina el sombreado del contenedor */
       text-align: center;
     }
 
-    .tablon-anuncios h2 {
-      color: #0056a2;
-      font-size: 2.5em;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    }
-
-    .tablon-anuncios ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
     .tablon-anuncios ul li {
-      background: #ffffff;
+      background: #0056a2; /* Azul suave */
       margin: 10px auto;
       padding: 15px;
       border-radius: 10px;
@@ -204,19 +191,11 @@
       display: flex;
       align-items: center;
       gap: 10px;
-    }
-
-    .tablon-anuncios ul li::before {
-      content: "\f00c";
-      font-family: "Font Awesome 5 Free";
-      font-weight: 900;
-      color: #0056a2;
-      margin-right: 10px;
-      font-size: 1.5em;
+      color: white; /* Color de la fuente para buen contraste */
     }
 
     .tablon-anuncios ul li:hover {
-      background: #f1f8ff;
+      background: #007acc; /* Azul más brillante al pasar el ratón */
       transform: scale(1.02);
       transition: transform 0.2s ease, background 0.2s ease;
     }
